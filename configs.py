@@ -37,7 +37,7 @@ class Config(object):
     START_MESSAGE = os.environ.get('START_MESSAGE', "Bot is running.")
     SKIP_SAVED_INFO_MESSAGE = os.environ.get('SKIP_SAVED_INFO_MESSAGE', False)
     USE_BUTTON_FOR_LINK = os.environ.get('USE_BUTTON_FOR_LINK', True)
-    BUTTON_FOR_LINK_STR = os.environ.get('USE_BUTTON_FOR_LINK', "🇬🇧 Click Me / 🇹🇷 Bana Tıkla")
+    BUTTON_FOR_LINK_STR = os.environ.get('USE_BUTTON_FOR_LINK', "👉 Tıkla")
     SEND_LINK_AGAIN = os.environ.get('SEND_LINK_AGAIN', True)
     USE_BOT_INSTEAD_USER = os.environ.get('USE_BOT_INSTEAD_USER', True)
     AUTH_IDS = [int(x) for x in os.environ.get("AUTH_IDS", "0").split()] # 0 = everyone
