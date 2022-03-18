@@ -93,20 +93,15 @@ async def private_handler(bot: Client, cmd: Message):
             text = ""
             if not Config.SKIP_SAVED_INFO_MESSAGE:
                 text += f"""
-....................... ✅ Tamamlandı / Finished .......................
-
-🇹🇷 Bu dosya {Config.AUTO_DELETE_TIME} saniye içinde silinecektir. Ancak, veritabanıma kopyaladım! Aşağıdaki linkle sonsuza kadar sana ait.
-🇬🇧 This file will be deleted in {Config.AUTO_DELETE_TIME} seconds. But, I copied it to the my database! It's yours forever with the link below."""
+Bu dosya {Config.AUTO_DELETE_TIME} saniye içinde silinecektir. Ancak, veritabanıma kopyaladım! Aşağıdaki linkle sonsuza kadar sana ait."""
             text += "\n"
             text += f"""
-............................ 🌧 Details / Detaylar ............................
-
 🌈 File: `{comingfilename}`
 🍏 Size: `{size}`
 🐇 Caption: `{caption}`
 [☀️ Link](https://t.me/{Config.BOT_USERNAME}?start={Config.URL_PREFIX}_{str(forward.message_id)}): `https://t.me/{Config.BOT_USERNAME}?start={Config.URL_PREFIX}_{str(forward.message_id)}`"""
             if Config.DELETE_SENT_MESSAGE:
-                text += f"\n\n🇬🇧 This message also will be deleted in {str(Config.DELETE_SENT_MESSAGE_TIME)} seconds. Better back up your link.\n🇹🇷 Ayrıca bu mesaj da {str(Config.DELETE_SENT_MESSAGE_TIME)} saniye sonra silinecek. Linkini yedeklersen iyi olur."
+                text += f"\n\nAyrıca bu mesaj da {str(Config.DELETE_SENT_MESSAGE_TIME)} saniye sonra silinecek. yedeklersen iyi olur."
             if Config.USE_BUTTON_FOR_LINK:
                 sentmessage = await sendMessage(
                     bot=bot,
@@ -138,14 +133,12 @@ async def private_handler(bot: Client, cmd: Message):
         #
         else:
             text = f"""
-....................... ✅ Tamamlandı / Finished .......................
-
 🌈 File: `{comingfilename}`
 🍏 Size: `{size}`
 🐇 Caption: `{caption}`
 [☀️ Link](https://t.me/{Config.BOT_USERNAME}?start={Config.URL_PREFIX}_{str(forward.message_id)}): `https://t.me/{Config.BOT_USERNAME}?start={Config.URL_PREFIX}_{str(forward.message_id)}`"""
             if Config.DELETE_SENT_MESSAGE:
-                text += f"\n\n🇬🇧 This message also will be deleted in {str(Config.DELETE_SENT_MESSAGE_TIME)} seconds. Better back up your link.\n🇹🇷 Ayrıca bu mesaj da {str(Config.DELETE_SENT_MESSAGE_TIME)} saniye sonra silinecek. Linkini yedeklersen iyi olur."
+                text += f"\n\nAyrıca bu mesaj da {str(Config.DELETE_SENT_MESSAGE_TIME)} saniye sonra silinecek. yedeklersen iyi olur."
             if Config.USE_BUTTON_FOR_LINK:
                 sentmessage = await sendMessage(
                     bot=bot,
@@ -230,21 +223,16 @@ if not Config.ONLY_BOT_MODE:
             text = ""
             if not Config.SKIP_SAVED_INFO_MESSAGE:
                 text += f"""
-....................... ✅ Tamamlandı / Finished .......................
-
-🇹🇷 Bu dosya {Config.AUTO_DELETE_TIME} saniye içinde silinecektir. Ancak, veritabanıma kopyaladım! Aşağıdaki linkle sonsuza kadar sana ait.
-🇬🇧 This file will be deleted in {Config.AUTO_DELETE_TIME} seconds. But, I copied it to the my database! It's yours forever with the link below."""
+Bu dosya {Config.AUTO_DELETE_TIME} saniye içinde silinecektir. Ancak, veritabanıma sakladım."""
             text += "\n"
             text += f"""
-............................ 🌧 Details / Detaylar ............................
-
 🌈 File: `{cammingfilename}`
 🍏 Size: `{size}`
 🐇 Caption: `{caption}`
 [☀️ Link](https://t.me/{Config.BOT_USERNAME}?start={Config.URL_PREFIX}_{str(forward.message_id)}): `https://t.me/{Config.BOT_USERNAME}?start={Config.URL_PREFIX}_{str(forward.message_id)}`"""
             #
             if Config.DELETE_SENT_MESSAGE:
-                text += f"\n\n🇬🇧 This message also will be deleted in {str(Config.DELETE_SENT_MESSAGE_TIME)} seconds. Better back up your link.\n🇹🇷 Ayrıca bu mesaj da {str(Config.DELETE_SENT_MESSAGE_TIME)} saniye sonra silinecek. Linkini yedeklersen iyi olur."
+                text += f"\n\nAyrıca bu mesaj da {str(Config.DELETE_SENT_MESSAGE_TIME)} saniye sonra silinecek. yedeklersen iyi olur."
             if Config.USE_BUTTON_FOR_LINK:
                 # try buttons
                 if Config.USE_BOT_INSTEAD_USER:
@@ -304,15 +292,13 @@ if not Config.ONLY_BOT_MODE:
             #
         else:
             text = f"""
-....................... ✅ Tamamlandı / Finished .......................
-
 🌈 File: `{cammingfilename}`
 🍏 Size: `{size}`
 🐇 Caption: `{caption}`
 [☀️ Link](https://t.me/{Config.BOT_USERNAME}?start={Config.URL_PREFIX}_{str(forward.message_id)}): `https://t.me/{Config.BOT_USERNAME}?start={Config.URL_PREFIX}_{str(forward.message_id)}`"""
             #
             if Config.DELETE_SENT_MESSAGE:
-                text += f"\n\n🇬🇧 This message also will be deleted in {str(Config.DELETE_SENT_MESSAGE_TIME)} seconds. Better back up your link.\n🇹🇷 Ayrıca bu mesaj da {str(Config.DELETE_SENT_MESSAGE_TIME)} saniye sonra silinecek. Linkini yedeklersen iyi olur."
+                text += f"\n\nAyrıca bu mesaj da {str(Config.DELETE_SENT_MESSAGE_TIME)} saniye sonra silinecek. yedeklersen iyi olur."
             if Config.USE_BUTTON_FOR_LINK:
                 if Config.USE_BOT_INSTEAD_USER:
                     sentmessage = await sendMessage(
