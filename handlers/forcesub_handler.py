@@ -14,9 +14,8 @@ async def ForceSub(bot: Client, cmd: Message):
         if user.status == "kicked":
             await bot.send_message(
                 chat_id=cmd.chat.id,
-                text=f"🇬🇧 Sorry, You are Banned! You will be Kicked from This Group within {Config.AUTO_KICK_TIME} Seconds.\n" \
-                    f"🇹🇷 Üzgünüm, Yasaklandınız! {Config.AUTO_KICK_TIME} Saniye İçinde Bu Gruptan Atılacaksınız.\n\n" \
-                    f"Contact / Bildir: {Config.CONTACT_ADRESS}.",
+                text=f"Üzgünüm, Yasaklandınız! {Config.AUTO_KICK_TIME} Saniye İçinde Bu Gruptan Atılacaksınız.\n\n" \
+                    f"Bildir: {Config.CONTACT_ADRESS}.",
                 disable_web_page_preview=True,
                 reply_to_message_id=cmd.message_id
             )
@@ -34,14 +33,12 @@ async def ForceSub(bot: Client, cmd: Message):
             return 200
         send_ = await bot.send_message(
             chat_id=cmd.chat.id,
-            text = f"""
-🇬🇧 Hey {cmd.from_user.mention}, seems like you haven't joined our channel. Please [Join Channel]({invite_link.invite_link}) and turn back here!
-🇹🇷 Merhaba {cmd.from_user.mention}, kanalımıza katılmamış görünüyorsun. Lütfen [Kanala Katılın]({invite_link.invite_link}) ve tekrar buraya gelin!""",
+            text = f"""Merhaba {cmd.from_user.mention}, kanalımıza katılmamış görünüyorsun. [Kanala Katılın]({invite_link.invite_link}) ve tekrar buraya gelin!""",
             reply_to_message_id=cmd.message_id,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("🤖 Join / Katıl", url=invite_link.invite_link)]
+                    [InlineKeyboardButton("🤖 Katıl", url=invite_link.invite_link)]
                 ]
             )
         )
