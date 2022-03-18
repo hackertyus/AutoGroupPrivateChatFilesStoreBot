@@ -93,7 +93,7 @@ async def private_handler(bot: Client, cmd: Message):
             text = ""
             if not Config.SKIP_SAVED_INFO_MESSAGE:
                 text += f"""
-Bu dosya {Config.AUTO_DELETE_TIME} saniye içinde silinecektir. Ancak, veritabanıma kopyaladım! Aşağıdaki linkle sonsuza kadar sana ait."""
+Bu dosya {Config.AUTO_DELETE_TIME} saniye içinde silinecektir\nAncak veritabanında saklanacaktır!"""
             text += "\n"
             text += f"""
 🌈 File: `{comingfilename}`
@@ -223,7 +223,7 @@ if not Config.ONLY_BOT_MODE:
             text = ""
             if not Config.SKIP_SAVED_INFO_MESSAGE:
                 text += f"""
-Bu dosya {Config.AUTO_DELETE_TIME} saniye içinde silinecektir. Ancak, veritabanıma sakladım."""
+Bu dosya {Config.AUTO_DELETE_TIME} saniye içinde silinecektir\nAncak veritabanında saklanacaktır!"""
             text += "\n"
             text += f"""
 🌈 File: `{cammingfilename}`
@@ -371,14 +371,11 @@ async def start_handler(bot: Client, event: Message):
                 capton = None
             #       
             if Config.SEND_LINK_AGAIN:
-                tex += "🇬🇧 You can access your file at any time with this link:\n" + \
-                    "🇹🇷 Bu linkle istediğiniz zaman tekrar dosyanıza ulaşabilirsiniz:\n\n" + \
-                    f"🔥 `{comingfilename}`\n" \
+                tex += "Bu linkle istediğiniz zaman tekrar dosyanıza ulaşabilirsiniz:\n\n" + \
                     f"🎁 `{capton}`\n" \
                     f"🎲 https://t.me/{Config.BOT_USERNAME}?start={Config.URL_PREFIX}_{str(file_id)}"
             if Config.DELETE_SENT_FILE:
-                tex += f"\n\n🇬🇧 This file will be deleted in {str(Config.DELETE_SENT_FILE_TIME)} seconds. Better back up your file.\n" + \
-                f"🇹🇷 Bu dosya {str(Config.DELETE_SENT_FILE_TIME)} saniye sonra silinecek. Dosyanı yedeklersen iyi olur."
+                tex += f"\n\nBu dosya {str(Config.DELETE_SENT_FILE_TIME)} saniye sonra silinecek. Dosyanı yedeklersen iyi olur."
             await sentfile.reply_text(tex, reply_to_message_id = sentfile.message_id, disable_web_page_preview=True) 
             # delete send file +
             if Config.DELETE_SENT_FILE:
@@ -386,7 +383,7 @@ async def start_handler(bot: Client, event: Message):
                 await sentfile.delete(True)
             # delete send file -
         except:
-            await sendMessage(bot, f"Unable to Get Message!\n\nContact / Bildir: {Config.CONTACT_ADRESS}", event.message_id, event.chat.id)
+            await sendMessage(bot, f"Unable to Get Message!\n\nBildir: {Config.CONTACT_ADRESS}", event.message_id, event.chat.id)
 
 @Bot.on_message(filters.group & filters.text & ~filters.edited)
 async def Fsub_handler(bot: Client, event: Message):
